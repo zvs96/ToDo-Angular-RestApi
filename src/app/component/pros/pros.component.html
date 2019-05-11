@@ -1,6 +1,6 @@
 <div>
-  <span (dblclick)="changeName($event,idx)" *ngFor="let item of data;let idx = index">
-    <div class="text"  data-id="pros-{{idx}}">
+  <span (dblclick)="changeName(idx)" *ngFor="let item of data;let idx = index">
+    <div class="text" data-id="pros-{{idx}}">
       {{item}}
     </div>
     <input hidden data-id="pros-{{idx}}" #prosInp matInput placeholder="Pros text" value="">

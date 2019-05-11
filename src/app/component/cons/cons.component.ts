@@ -27,16 +27,21 @@ export class ConsComponent implements OnInit {
   }
 
   addItem(inp: HTMLInputElement) {
-    this.data.push(inp.value)
+    if(this.data == undefined){
+      this.data = [inp.value]
+    }
+    else{
+      this.data.push(inp.value)
+    }
     inp.value = ""
     this._store.dispatch(new Actions.ConsData(this.data))
     this.updateData()
   }
 
-  changeName(elm: MouseEvent, idx: number) {
-    const text: HTMLDivElement = (elm.srcElement as HTMLElement).children[0] as HTMLDivElement
-    const input: HTMLInputElement = (elm.srcElement as HTMLElement).children[1] as HTMLInputElement
-    input.value = text.textContent.trim()
+  changeName(idx: number) {
+    const text: HTMLDivElement = document.querySelector(`div[id="cons-${idx}"]`)
+    const input: HTMLInputElement = document.querySelector(`input[id="cons-${idx}"]`)
+    input.value = text.innerText.trim()
     text.style.display = 'none'
     input.removeAttribute('hidden')
     input.focus()

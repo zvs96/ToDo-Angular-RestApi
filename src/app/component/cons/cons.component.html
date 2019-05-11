@@ -1,9 +1,9 @@
 <div>
-  <span (dblclick)="changeName($event,idx)" *ngFor="let item of data;let idx = index">
-    <div class="text" data-id="pros-{{idx}}">
+  <span (dblclick)="changeName(idx)" *ngFor="let item of data;let idx = index">
+    <div class="text" data-id="cons-{{idx}}">
       {{item}}
     </div>
-    <input hidden data-id="pros-{{idx}}" #prosInp matInput placeholder="Pros text" value="">
+    <input hidden data-id="cons-{{idx}}" #consInp matInput placeholder="Cons text" value="">
     <span>
       <i class="material-icons" (click)="removeItem(idx)"> close </i>
     </span>
@@ -16,6 +16,6 @@
     </mat-form-field>
   </span>
   <span>
-    <button mat-raised-button color="warn" [disabled]="consInp.value==0" (click)="addItem(consInp)">Send</button>
+    <button mat-raised-button color="primary" [disabled]="consInp.value==0" (click)="addItem(consInp)">Send</button>
   </span>
 </form>
