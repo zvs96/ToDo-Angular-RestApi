@@ -1,0 +1,98 @@
+div {
+    display              : -webkit-box;
+    display              : -ms-flexbox;
+    display              : flex;
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+    padding              : 0 5%;
+    width                : 90%;
+    overflow-y           : auto;
+
+    span {
+        display          : -webkit-box;
+        display          : -ms-flexbox;
+        display          : flex;
+        -webkit-box-pack : justify;
+        -ms-flex-pack    : justify;
+        justify-content  : space-between;
+        -webkit-box-align: center;
+        -ms-flex-align   : center;
+        align-items      : center;
+        padding          : 5px 0;
+
+        .text {
+            width        : -webkit-fit-content;
+            width        : -moz-fit-content;
+            width        : fit-content;
+            text-overflow: ellipsis;
+            overflow     : hidden;
+            padding      : 0;
+        }
+
+        i {
+            font-size: 14px;
+            cursor   : pointer;
+            padding  : 0 5px;
+            color    : red;
+
+            &:first-child {
+                color: green;
+            }
+        }
+    }
+}
+
+form {
+    width  : 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    span {
+        width            : 30%;
+        display          : -webkit-box;
+        display          : -ms-flexbox;
+        display          : flex;
+        -webkit-box-align: center;
+        -ms-flex-align   : center;
+        align-items      : center;
+        -webkit-box-pack : justify;
+        -ms-flex-pack    : justify;
+        justify-content  : space-between;
+
+        &:first-child {
+            width: 70%;
+        }
+
+        mat-form-field {
+            width: 95%;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width:400px) {
+    form {
+        -webkit-box-orient   : vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction   : column;
+        flex-direction       : column;
+
+        span {
+            width: 100% !important;
+
+            mat-form-field {
+                width: 100%;
+            }
+
+            button {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<div>
+  <span (dblclick)="changeName($event,idx)" *ngFor="let item of data;let idx = index">
+    <div class="text"  data-id="pros-{{idx}}">
+      {{item}}
+    </div>
+    <input hidden data-id="pros-{{idx}}" #prosInp matInput placeholder="Pros text" value="">
+    <span>
+      <i class="material-icons" (click)="removeItem(idx)"> close </i>
+    </span>
+  </span>
+</div>
+<form>
+  <span>
+    <mat-form-field>
+      <input #prosInp matInput placeholder="Pros text" value="">
+    </mat-form-field>
+  </span>
+  <span>
+    <button mat-raised-button color="primary" [disabled]="prosInp.value==0" (click)="addItem(prosInp)">Send</button>
+  </span>
+</form>
